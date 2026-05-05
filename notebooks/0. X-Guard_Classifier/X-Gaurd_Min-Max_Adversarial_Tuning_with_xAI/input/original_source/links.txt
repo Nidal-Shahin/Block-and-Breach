@@ -1,0 +1,16 @@
+Datasets merged to form the X-Guard training dataset:
+
+1. WildJailbreak (Allen Institute for AI)
+   URL: https://huggingface.co/datasets/allenai/wildjailbreak/blob/main/train/train.tsv
+
+2. GenTelBench-v1 (GenTelLab)
+   URL: https://huggingface.co/datasets/GenTelLab/gentelbench-v1/blob/main/jailbreaking_attack_dataset.parquet
+
+3. HarmBench Prompt Injection
+   URL: https://github.com/YEHIA060606/harmbench-prompt-injection/blob/main/data/prompts.csv
+
+4. JailbreakBench (JBB-Behaviors)
+   URL: https://huggingface.co/datasets/JailbreakBench/JBB-Behaviors/tree/main/data
+
+5. AdvBench (llm-attacks)
+   URL: https://github.com/llm-attacks/llm-attacks/blob/main/data/advbench/harmful_behaviors.csv
