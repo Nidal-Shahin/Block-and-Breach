@@ -9,17 +9,24 @@ This project conducts empirical research on LLM security by systematically testi
 ## Research Methodology
 
 ### Target Models
+
 - **Llama-3-8B-Lexi-Uncensored**: Uncensored variant for baseline vulnerability assessment
 - **Qwen2.5-7B-Instruct**: Production-grade model with built-in safety mechanisms
 - **Strategic Model Selection**: Focus on models representing different safety paradigms
 
 ### Attack Vectors
+
 - **Direct-Pass Attacks**: Baseline prompt injection without obfuscation
 - **Future Attack Methods**: Framework designed for extensibility to additional attack types
 
 ### Defense Mechanisms
+
 - **Baseline**: No additional defense (model's native safety only)
 - **X-Guard**: External safety filtering system with configurable risk thresholds
+  - **Training**: 425K+ prompts with adversarial tuning and XAI regularization
+  - **Architecture**: RoBERTa-base classifier with FGM adversarial training
+  - **Explainability**: Integrated Gradients for token-level attribution analysis
+  - **Threshold**: Configurable risk scoring (default: 0.5)
 - **Future Defenses**: Framework supports integration of additional defensive approaches
 
 ## Project Structure
@@ -28,11 +35,16 @@ This project conducts empirical research on LLM security by systematically testi
 ├── data/
 │   ├── evaluation_data/
 │   │   ├── eval_500.csv          # Standardized evaluation dataset (500 prompts)
+│   │   ├── link.txt              # Kaggle dataset reference
 │   │   └── original_source/      # Source datasets (HarmBench, XSTest)
 │   └── xguard_training_data/
-│       ├── processed_data.csv    # Large-scale training data for X-Guard
-│       └── original_source/      # Original training datasets
+│       ├── processed_data.csv.url # Kaggle dataset URL for large-scale training data
+│       ├── link.txt               # Kaggle dataset reference
+│       └── original_source/       # Original training datasets
 ├── notebooks/
+│   ├── 0. X-Guard_Classifier/
+│   │   ├── 0.1. Adversarial-Tuning_with_XAI-Regularization/
+│   │   └── 0.2. XAI-Analysis/
 │   ├── 1.1.1. Llama_Direct-Pass_Baseline/
 │   ├── 1.1.2. Llama_Direct-Pass_X-Guard/
 │   ├── 2.1.1. Qwen_Direct-Pass_Baseline/
@@ -54,19 +66,25 @@ Each experiment follows a standardized three-phase pipeline:
 - **True Positive Rate (TPR)**: Defense effectiveness in blocking attacks
 - **False Positive Rate (FPR)**: Over-blocking of benign requests (utility impact)
 - **Attention-based Explainability**: Token-level influence analysis for interpretability
+- **XAI Attribution Scores**: Integrated Gradients for understanding model decision patterns
+- **Adversarial Robustness**: FGM-based perturbation resistance measurement
 
 ## Data Schema
 
 ### Evaluation Dataset
+
 Standardized CSV format with columns:
+
 - `prompt`: Input text
 - `category`: Attack classification (harmful_technical, harmful_social, benign_definitional, etc.)
 - `label`: Binary harmful/benign classification
 - `intent`: Primary intent (harmful/benign)
-- `source`: Original dataset (HarmBench, XSTest)
+- `source`: Original dataset (HarmBench, XSTest, Original)
 
 ### Results Format
+
 Each experiment generates:
+
 - CSV files with model responses and metadata
 - JSON files with attention-based explainability data
 - Comprehensive evaluation metrics and visualizations
@@ -74,14 +92,25 @@ Each experiment generates:
 ## Current Findings
 
 ### X-Guard Performance
-- **High Effectiveness**: Demonstrates strong blocking of harmful requests
-- **Risk Scoring**: Configurable threshold system (default: 0.5)
-- **Utility Preservation**: Maintains acceptable false positive rates
+
+- **High Effectiveness**: Demonstrates strong blocking of harmful requests with risk scores >0.99
+- **Training Scale**: 425K+ prompts with 25% stratified subsampling for efficient training
+- **Adversarial Robustness**: FGM perturbation with ε=0.5 for enhanced security
+- **XAI Integration**: LayerIntegratedGradients for token-level attribution analysis
+- **Utility Preservation**: Maintains acceptable false positive rates on benign requests
 
 ### Model Comparisons
-- **Uncensored vs. Censored**: Baseline vulnerability assessment
-- **Defense Integration**: Comparative analysis of defense mechanisms
-- **Attention Patterns**: Token-level insights into model decision-making
+
+- **Uncensored vs. Censored**: Baseline vulnerability assessment across safety paradigms
+- **Defense Integration**: Comparative analysis of X-Guard vs. native model safety
+- **Attention Patterns**: Token-level insights into model decision-making processes
+- **Quantization Impact**: 4-bit NF4 quantization for efficient deployment
+
+### Technical Implementation
+
+- **Memory Optimization**: Gradient checkpointing and explicit tensor management
+- **Multi-GPU Support**: DataParallel training for dual T4 16GB configurations
+- **Robust Training**: NaN/Inf gradient detection and recovery mechanisms
 
 ## Research Contributions
 
@@ -100,15 +129,34 @@ Each experiment generates:
 ## Usage
 
 ### Running Experiments
+
 1. Navigate to the appropriate notebook directory
 2. Execute Response Generation notebook
 3. Run Response Evaluation with external judge models
 4. Analyze results in Results notebook
 
 ### Data Requirements
+
 - Hugging Face token for model access
 - Sufficient computational resources (GPU recommended)
 - External judge model access for evaluation phase
+
+### Dependencies
+
+```bash
+pip install -U bitsandbytes>=0.46.1
+pip install transformers torch
+pip install pandas numpy seaborn matplotlib
+pip install scikit-learn
+pip install captum  # For XAI analysis
+```
+
+### Environment Setup
+
+- **Platform**: Designed for Kaggle notebooks with GPU support
+- **Authentication**: Uses `kaggle_secrets` for HF_TOKEN management
+- **Hardware**: Optimized for dual T4 16GB GPUs with 4-bit quantization
+- **Memory**: Implements gradient checkpointing and explicit memory management
 
 ## License
 
