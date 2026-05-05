@@ -1,0 +1,5 @@
+1. HarmBench (For unsafe/harmful prompts)
+   GitHub Repository: https://github.com/centerforaisafety/HarmBench/blob/main/data/behavior_datasets/harmbench_behaviors_text_all.csv
+
+2. XSTest (For exaggerated safe/benign prompts)
+   Hugging Face Dataset: https://huggingface.co/datasets/walledai/XSTest/blob/main/data/train-00000-of-00001.parquet
