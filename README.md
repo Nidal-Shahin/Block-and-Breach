@@ -65,6 +65,11 @@ This project conducts empirical research on LLM security by systematically testi
 │       ├── 2.1.5. Qwen_Direct-Pass_ShieldGemma-2B/
 │       ├── 2.1.6. Qwen_Direct-Pass_ShieldGemma-9B/
 │       └── 2.1.7. Qwen_Direct-Pass_WildGuard-7B/
+│   └── 3. Comparative_Analysis/
+│       └── 3.1. Comprehensive_Results_Comparison/
+│           ├── comprehensive-comparative-analysis.ipynb  # Cross-experiment analysis with SUE scoring
+│           ├── output/  # Generated analysis results and visualizations
+│           └── link.url  # Kaggle dataset reference
 └── README.md
 ```
 
@@ -76,14 +81,23 @@ Each experiment follows a standardized three-phase pipeline:
 2. **Response Evaluation**: External judge models assess response safety and utility
 3. **Results Analysis**: Comprehensive metrics and visualizations
 
+### Comparative Analysis Framework
+
+- **Comprehensive Results Comparison**: Cross-experiment analysis across all 14 model-defense combinations
+- **SUE Score (Security-Utility-Efficiency)**: Unified metric combining security effectiveness, utility preservation, and computational efficiency
+- **Performance Benchmarking**: Latency and throughput analysis for production deployment considerations
+- **Statistical Significance Testing**: Rigorous evaluation of defense performance improvements
+
 ### Key Metrics
 
 - **Attack Success Rate (ASR)**: Percentage of harmful prompts that successfully elicit harmful responses
-- **True Positive Rate (TPR)**: Defense effectiveness in blocking attacks
+- **True Positive Rate (TPR)**: Defense effectiveness in blocking attacks (Task Performance Retention)
 - **False Positive Rate (FPR)**: Over-blocking of benign requests (utility impact)
+- **SUE Score (Security-Utility-Efficiency)**: Unified metric combining ASR, TPR, and computational efficiency
 - **Attention-based Explainability**: Token-level influence analysis for interpretability
 - **XAI Attribution Scores**: Integrated Gradients for understanding model decision patterns
 - **Adversarial Robustness**: FGM-based perturbation resistance measurement
+- **Throughput**: Requests processed per second (production deployment consideration)
 
 ## Data Schema
 
@@ -122,11 +136,19 @@ Each experiment generates:
 - **Attention Patterns**: Token-level insights into model decision-making processes
 - **Quantization Impact**: 4-bit NF4 quantization for efficient deployment
 
+### Comparative Analysis Results
+
+- **Best Overall Defense (SUE Score)**: X-Guard on Qwen2.5-7B-Instruct (96.39)
+- **Highest Throughput**: X-Guard (77.00 it/s) - 781.8x faster than slowest defense
+- **Maximum Security**: Llama-Guard-3 on Qwen2.5-7B-Instruct (ASR: 1.60%)
+- **Optimal Balance**: X-Guard provides best security-utility-efficiency tradeoff for production deployment
+
 ### Technical Implementation
 
 - **Memory Optimization**: Gradient checkpointing and explicit tensor management
 - **Multi-GPU Support**: DataParallel training for dual T4 16GB configurations
 - **Robust Training**: NaN/Inf gradient detection and recovery mechanisms
+- **Performance Benchmarking**: Comprehensive latency and throughput analysis across all defenses
 
 ## Research Contributions
 
