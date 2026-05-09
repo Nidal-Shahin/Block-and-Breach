@@ -27,7 +27,11 @@ This project conducts empirical research on LLM security by systematically testi
   - **Architecture**: RoBERTa-base classifier with FGM adversarial training
   - **Explainability**: Integrated Gradients for token-level attribution analysis
   - **Threshold**: Configurable risk scoring (default: 0.5)
-- **Future Defenses**: Framework supports integration of additional defensive approaches
+- **Llama-Guard-3**: Meta's safety classifier for harmful content detection
+- **Llama-Guard-4**: Latest generation safety classifier with enhanced capabilities
+- **ShieldGemma-2B**: Google's compact safety model for efficient filtering
+- **ShieldGemma-9B**: Large-scale safety model with comprehensive coverage
+- **WildGuard-7B**: Advanced safety classifier with robust detection capabilities
 
 ## Project Structure
 
@@ -45,10 +49,22 @@ This project conducts empirical research on LLM security by systematically testi
 │   ├── 0. X-Guard_Classifier/
 │   │   ├── 0.1. Adversarial-Tuning_with_XAI-Regularization/
 │   │   └── 0.2. XAI-Analysis/
-│   ├── 1.1.1. Llama_Direct-Pass_Baseline/
-│   ├── 1.1.2. Llama_Direct-Pass_X-Guard/
-│   ├── 2.1.1. Qwen_Direct-Pass_Baseline/
-│   └── 2.1.2. Qwen_Direct-Pass_X-Guard/
+│   ├── 1. Llama-3-8B-Lexi-Uncensored/
+│   │   ├── 1.1.1. Llama_Direct-Pass_Baseline/
+│   │   ├── 1.1.2. Llama_Direct-Pass_X-Guard/
+│   │   ├── 1.1.3. Llama_Direct-Pass_Llama-Guard-3/
+│   │   ├── 1.1.4. Llama_Direct-Pass_Llama-Guard-4/
+│   │   ├── 1.1.5. Llama_Direct-Pass_ShieldGemma-2B/
+│   │   ├── 1.1.6. Llama_Direct-Pass_ShieldGemma-9B/
+│   │   └── 1.1.7. Llama_Direct-Pass_WildGuard-7B/
+│   └── 2. Qwen2.5-7B-Instruct/
+│       ├── 2.1.1. Qwen_Direct-Pass_Baseline/
+│       ├── 2.1.2. Qwen_Direct-Pass_X-Guard/
+│       ├── 2.1.3. Qwen_Direct-Pass_Llama-Guard-3/
+│       ├── 2.1.4. Qwen_Direct-Pass_Llama-Guard-4/
+│       ├── 2.1.5. Qwen_Direct-Pass_ShieldGemma-2B/
+│       ├── 2.1.6. Qwen_Direct-Pass_ShieldGemma-9B/
+│       └── 2.1.7. Qwen_Direct-Pass_WildGuard-7B/
 └── README.md
 ```
 
