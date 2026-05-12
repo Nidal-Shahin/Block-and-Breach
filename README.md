@@ -33,6 +33,9 @@ This project conducts empirical research on LLM security by systematically testi
 - **ShieldGemma-9B**: Large-scale safety model with comprehensive coverage
 - **WildGuard-7B**: Advanced safety classifier with robust detection capabilities
 
+### Defense Evalauation Diagram
+![Defense Evaluation Diagram](https://lh3.googleusercontent.com/u/0/d/1BTKqvLdT9SrJpf7Vl1cloabgNBaxKL3M)
+
 ## Project Structure
 
 ```
@@ -57,14 +60,14 @@ This project conducts empirical research on LLM security by systematically testi
 │   │   ├── 1.1.5. Llama_Direct-Pass_ShieldGemma-2B/
 │   │   ├── 1.1.6. Llama_Direct-Pass_ShieldGemma-9B/
 │   │   └── 1.1.7. Llama_Direct-Pass_WildGuard-7B/
-│   └── 2. Qwen2.5-7B-Instruct/
-│       ├── 2.1.1. Qwen_Direct-Pass_Baseline/
-│       ├── 2.1.2. Qwen_Direct-Pass_X-Guard/
-│       ├── 2.1.3. Qwen_Direct-Pass_Llama-Guard-3/
-│       ├── 2.1.4. Qwen_Direct-Pass_Llama-Guard-4/
-│       ├── 2.1.5. Qwen_Direct-Pass_ShieldGemma-2B/
-│       ├── 2.1.6. Qwen_Direct-Pass_ShieldGemma-9B/
-│       └── 2.1.7. Qwen_Direct-Pass_WildGuard-7B/
+│   ├── 2. Qwen2.5-7B-Instruct/
+│   │   ├── 2.1.1. Qwen_Direct-Pass_Baseline/
+│   │   ├── 2.1.2. Qwen_Direct-Pass_X-Guard/
+│   │   ├── 2.1.3. Qwen_Direct-Pass_Llama-Guard-3/
+│   │   ├── 2.1.4. Qwen_Direct-Pass_Llama-Guard-4/
+│   │   ├── 2.1.5. Qwen_Direct-Pass_ShieldGemma-2B/
+│   │   ├── 2.1.6. Qwen_Direct-Pass_ShieldGemma-9B/
+│   │   └── 2.1.7. Qwen_Direct-Pass_WildGuard-7B/
 │   └── 3. Comparative_Analysis/
 │       └── 3.1. Comprehensive_Results_Comparison/
 │           ├── comprehensive-comparative-analysis.ipynb  # Cross-experiment analysis with SUE scoring
