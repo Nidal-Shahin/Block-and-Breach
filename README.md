@@ -17,6 +17,7 @@ This project conducts empirical research on LLM security by systematically testi
 ### Attack Vectors
 
 - **Direct-Pass Attacks**: Baseline prompt injection without obfuscation
+- **Iterative-Refinement Attacks**: Multi-step prompt manipulation to bypass defenses
 - **Future Attack Methods**: Framework designed for extensibility to additional attack types
 
 ### Defense Mechanisms
@@ -53,26 +54,48 @@ This project conducts empirical research on LLM security by systematically testi
 │   │   ├── 0.1. Adversarial-Tuning_with_XAI-Regularization/
 │   │   └── 0.2. XAI-Analysis/
 │   ├── 1. Llama-3-8B-Lexi-Uncensored/
-│   │   ├── 1.1.1. Llama_Direct-Pass_Baseline/
-│   │   ├── 1.1.2. Llama_Direct-Pass_X-Guard/
-│   │   ├── 1.1.3. Llama_Direct-Pass_Llama-Guard-3/
-│   │   ├── 1.1.4. Llama_Direct-Pass_Llama-Guard-4/
-│   │   ├── 1.1.5. Llama_Direct-Pass_ShieldGemma-2B/
-│   │   ├── 1.1.6. Llama_Direct-Pass_ShieldGemma-9B/
-│   │   └── 1.1.7. Llama_Direct-Pass_WildGuard-7B/
+│   │   ├── 1.1. Direct-Pass_Attack/
+│   │   │   ├── 1.1.1. Llama_Direct-Pass_Baseline/
+│   │   │   ├── 1.1.2. Llama_Direct-Pass_X-Guard/
+│   │   │   ├── 1.1.3. Llama_Direct-Pass_Llama-Guard-3/
+│   │   │   ├── 1.1.4. Llama_Direct-Pass_Llama-Guard-4/
+│   │   │   ├── 1.1.5. Llama_Direct-Pass_ShieldGemma-2B/
+│   │   │   ├── 1.1.6. Llama_Direct-Pass_ShieldGemma-9B/
+│   │   │   └── 1.1.7. Llama_Direct-Pass_WildGuard-7B/
+│   │   └── 1.2. Iterative-Refinement_Attack/
+│   │       ├── 1.2.1. Llama_Iterative-Refinement_Baseline/
+│   │       ├── 1.2.2. Llama_Iterative-Refinement_X-Guard/
+│   │       ├── 1.2.3. Llama_Iterative-Refinement_Llama-Guard-3/
+│   │       ├── 1.2.4. Llama_Iterative-Refinement_Llama-Guard-4/
+│   │       ├── 1.2.5. Llama_Iterative-Refinement_ShieldGemma-2B/
+│   │       ├── 1.2.6. Llama_Iterative-Refinement_ShieldGemma-9B/
+│   │       └── 1.2.7. Llama_Iterative-Refinement_WildGuard-7B/
 │   ├── 2. Qwen2.5-7B-Instruct/
-│   │   ├── 2.1.1. Qwen_Direct-Pass_Baseline/
-│   │   ├── 2.1.2. Qwen_Direct-Pass_X-Guard/
-│   │   ├── 2.1.3. Qwen_Direct-Pass_Llama-Guard-3/
-│   │   ├── 2.1.4. Qwen_Direct-Pass_Llama-Guard-4/
-│   │   ├── 2.1.5. Qwen_Direct-Pass_ShieldGemma-2B/
-│   │   ├── 2.1.6. Qwen_Direct-Pass_ShieldGemma-9B/
-│   │   └── 2.1.7. Qwen_Direct-Pass_WildGuard-7B/
+│   │   ├── 2.1. Direct-Pass_Attack/
+│   │   │   ├── 2.1.1. Qwen_Direct-Pass_Baseline/
+│   │   │   ├── 2.1.2. Qwen_Direct-Pass_X-Guard/
+│   │   │   ├── 2.1.3. Qwen_Direct-Pass_Llama-Guard-3/
+│   │   │   ├── 2.1.4. Qwen_Direct-Pass_Llama-Guard-4/
+│   │   │   ├── 2.1.5. Qwen_Direct-Pass_ShieldGemma-2B/
+│   │   │   ├── 2.1.6. Qwen_Direct-Pass_ShieldGemma-9B/
+│   │   │   └── 2.1.7. Qwen_Direct-Pass_WildGuard-7B/
+│   │   └── 2.2. Iterative-Refinement_Attack/
+│   │       ├── 2.2.1. Qwen_Iterative-Refinement_Baseline/
+│   │       ├── 2.2.2. Qwen_Iterative-Refinement_X-Guard/
+│   │       ├── 2.2.3. Qwen_Iterative-Refinement_Llama-Guard-3/
+│   │       ├── 2.2.4. Qwen_Iterative-Refinement_Llama-Guard-4/
+│   │       ├── 2.2.5. Qwen_Iterative-Refinement_ShieldGemma-2B/
+│   │       ├── 2.2.6. Qwen_Iterative-Refinement_ShieldGemma-9B/
+│   │       └── 2.2.7. Qwen_Iterative-Refinement_WildGuard-7B/
 │   └── 3. Comparative_Analysis/
-│       └── 3.1. Comprehensive_Results_Comparison/
-│           ├── comprehensive-comparative-analysis.ipynb  # Cross-experiment analysis with SUE scoring
+│       ├── 3.1. Direct-Pass_Comprehensive_Results_Comparison/
+│       │   ├── direct-pass-comprehensive-comparative-analysis.ipynb  # Cross-experiment analysis with SUE scoring
+│       │   ├── output/  # Generated analysis results and visualizations
+│       │   └── link.url  # Kaggle notebook reference
+│       └── 3.2. Iterative-Refinement_Comprehensive_Results_Comparison/
+│           ├── iterative-refinement-comprehensive-comparison.ipynb
 │           ├── output/  # Generated analysis results and visualizations
-│           └── link.url  # Kaggle dataset reference
+│           └── link.url  # Kaggle notebook reference
 └── README.md
 ```
 
