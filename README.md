@@ -49,7 +49,7 @@ This project conducts empirical research on LLM security by systematically testi
 │       ├── processed_data.csv.url # Kaggle dataset URL for large-scale training data
 │       ├── link.txt               # Kaggle dataset reference
 │       └── original_source/       # Original training datasets
-├── notebooks/
+├── src/
 │   ├── 0. X-Guard_Classifier/
 │   │   ├── 0.1. Adversarial-Tuning_with_XAI-Regularization/
 │   │   └── 0.2. XAI-Analysis/
