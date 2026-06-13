@@ -4,6 +4,15 @@ A comprehensive research framework for evaluating Large Language Model (LLM) sec
 
 ---
 
+## 0. License
+
+**Code** (all `.py`, `.ipynb`, and other source files) is licensed under the [MIT License](LICENSE).
+
+**Dataset** (`processed_data.csv`, `eval_500.csv` and any other data files) is licensed separately under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](DATA_LICENSE).  
+This means you may use the dataset for non‑commercial purposes only, and any derivative work must give credit and share under the same terms.
+
+---
+
 ## 1. System Architecture Overview
 
 The framework evaluates safety alignment vulnerability and external classifier defense robustness across eight interconnected technical flows:
