@@ -55,17 +55,20 @@ The framework evaluates safety alignment vulnerability and external classifier d
 │   └── xguard_training_data/                   # Upstream classifier datasets
 │       ├── original_source/                    # URLs to source text collections
 │       └── processed_data.csv.url              # Primary multi-source fine-tuning corpus
+│
+├── model/                                      # Model artifacts, checkpoints, and references
+├── paper/                                      # Paper sources and compiled manuscript files
 └── src/
-├── 0. X-Guard_Classifier/                  # Defense Fine-tuning & Introspection
+├── 0. X-Guard_Classifier/                      # Defense Fine-tuning & Introspection
 │   ├── 0.1. Adversarial-Tuning_with_XAI-Regularization/
-│   └── 0.2. X-Guard_XAI_Analysis/          # Generates global token importance & positional smoothing maps
-├── 1. Direct-Pass_Evaluation/              # Static Evaluation Pipeline
-│   ├── 1.1. Llama-3-8B-Lexi_Evaluation/    # Direct-pass baselines and guards on Llama-3
-│   └── 1.2. Qwen2.5-7B-Instruct_Evaluation/# Direct-pass baselines and guards on Qwen2.5
-├── 2. Iterative-Refinement_Evaluation/     # Evolutionary Attack Pipeline
-│   ├── 2.1. Llama-3-8B-Lexi_Evaluation/    # Groq-mutated prompt iterations & filters on Llama-3
-│   └── 2.2. Qwen2.5-7B-Instruct_Evaluation/# Groq-mutated prompt iterations & filters on Qwen2.5
-└── 3. Comparative_Analysis/                # Cross-Axis Aggregation and Metrics Synthesis
+│   └── 0.2. X-Guard_XAI_Analysis/              # Generates global token importance & positional smoothing maps
+├── 1. Direct-Pass_Evaluation/                  # Static Evaluation Pipeline
+│   ├── 1.1. Llama-3-8B-Lexi_Evaluation/        # Direct-pass baselines and guards on Llama-3
+│   └── 1.2. Qwen2.5-7B-Instruct_Evaluation/    # Direct-pass baselines and guards on Qwen2.5
+├── 2. Iterative-Refinement_Evaluation/         # Evolutionary Attack Pipeline
+│   ├── 2.1. Llama-3-8B-Lexi_Evaluation/        # Groq-mutated prompt iterations & filters on Llama-3
+│   └── 2.2. Qwen2.5-7B-Instruct_Evaluation/    # Groq-mutated prompt iterations & filters on Qwen2.5
+└── 3. Comparative_Analysis/                    # Cross-Axis Aggregation and Metrics Synthesis
 ├── 3.1. Direct-Pass_Comprehensive_Results_Comparison/
 └── 3.2. Iterative-Refinement_Comprehensive_Results_Comparison/
 
