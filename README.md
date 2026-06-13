@@ -121,3 +121,10 @@ pip install scikit-learn
 pip install captum  # Mandatory for mechanistic XAI and regularized X-Guard loops
 
 ```
+
+## 6. Authors
+*Jordan University of Science and Technology* 
+ 1. Prof. Ahmad Bataineh, asbataineh@just.edu.jo
+ 2. Abdelrahman Alsheyab, arahmadalsheyab22@cit.just.edu.jo
+ 3. Mohamamd Alkhasawneh, myalkhasawneh22@cit.just.edu.jo
+ 4. Nidal Shahin, nkhameedshahin22@cit.just.edu.jo
